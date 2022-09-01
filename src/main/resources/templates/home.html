@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Home page</title>
+<meta name="viewport" content="width=device-width, initia-scale=1">
+<link href="webjars/bootstrap/3.4.1/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+<section>
+	<div class="container">
+		<div class="pb-2 mt-4 mb-2">
+			<h2>Gestione contatti - <small>Lista record</small></h2>
+		</div>
+		
+		<table class="table table-hover">
+			<thead>
+				<tr>
+					<th>Nome</th>
+					<th>Cognome</th>
+					<th>Username</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="contatto : ${listaContatti}">
+					<td th:text="${contatto.nome}"></td>
+					<td th:text="${contatto.cognome}"></td>
+					<td th:text="${contatto.username}"></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</section>
+
+</body>
+</html>
